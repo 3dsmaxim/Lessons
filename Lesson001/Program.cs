@@ -53,43 +53,75 @@
 
 // 3. Напишите программу, которая будет выдавать название дня недели по заданному номеру.
 
-Console.Write("Введите номер дня недели: ");
-int Num = Convert.ToInt32(Console.ReadLine());
-if (Num > 0 && Num < 8)
+// Console.Write("Введите номер дня недели: ");
+// int Num = Convert.ToInt32(Console.ReadLine());
+// if (Num > 0 && Num < 8)
+// {
+//     if ((Num > 0 && Num < 8) & (Num == 1))
+//     {
+//         Console.WriteLine("Понедельник");
+//     }
+//     if ((Num > 0 && Num < 8) & (Num == 2))
+//     {
+//         Console.WriteLine("Вторник");
+//     }
+//     if ((Num > 0 && Num < 8) & (Num == 3))
+//     {
+//         Console.WriteLine("Среда");
+//     }
+//     if ((Num > 0 && Num < 8) & (Num == 4))
+//     {
+//         Console.WriteLine("Четверг");
+//     }
+//     if ((Num > 0 && Num < 8) & (Num == 5))
+//     {
+//         Console.WriteLine("Пятница");
+//     }
+//     if ((Num > 0 && Num < 8) & (Num == 6))
+//     {
+//         Console.WriteLine("Суббота");
+//     }
+//     if ((Num > 0 && Num < 8) & (Num == 7))
+//     {
+//         Console.WriteLine("Воскресенье");
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("Неверный ввод числа");
+// }
+
+
+
+// 5. Напишите программу, которая на вход принимает 
+//одно число (N), а на выходе показывает все целые числа в промежутке от -N до N.
+
+int count = 0;
+Console.WriteLine("Ввведите число чтобы получить интерва от -N до +N");
+int numberI = Math.Abs((Convert.ToInt32(Console.ReadLine())));
+if (numberI > 0) 
 {
-    if ((Num > 0 && Num < 8) & (Num == 1))
+    int numberB = numberI * (-1);
+
+    while (count < numberI + numberI + 1) 
+    
     {
-        Console.WriteLine("Понедельник");
+        
+        Console.Write(numberB + ", ");
+        numberB = numberB + 1;
+        count = count + 1;
     }
-    if ((Num > 0 && Num < 8) & (Num == 2))
-    {
-        Console.WriteLine("Вторник");
-    }
-    if ((Num > 0 && Num < 8) & (Num == 3))
-    {
-        Console.WriteLine("Среда");
-    }
-    if ((Num > 0 && Num < 8) & (Num == 4))
-    {
-        Console.WriteLine("Четверг");
-    }
-    if ((Num > 0 && Num < 8) & (Num == 5))
-    {
-        Console.WriteLine("Пятница");
-    }
-    if ((Num > 0 && Num < 8) & (Num == 6))
-    {
-        Console.WriteLine("Суббота");
-    }
-    if ((Num > 0 && Num < 8) & (Num == 7))
-    {
-        Console.WriteLine("Воскресенье");
-    }
+
 }
 else
 {
-    Console.WriteLine("Неверный ввод числа");
+    int numberB = numberI;
+    Console.Write(numberB + ", ");
 }
+
+
+
+
 
 
 // 5 Напишите программу, которая принимает на вход трёхзначное число 

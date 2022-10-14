@@ -96,35 +96,35 @@
 // 5. Напишите программу, которая на вход принимает 
 //одно число (N), а на выходе показывает все целые числа в промежутке от -N до N.
 
-int count = 0;
-Console.WriteLine("Ввведите число чтобы получить интерва от -N до +N");
-int numberI = Math.Abs((Convert.ToInt32(Console.ReadLine())));
-if (numberI > 0) 
-{
-    int numberB = numberI * (-1);
+// int count = 0;
+// Console.WriteLine("Ввведите число чтобы получить интерва от -N до +N");
+// int numberI = Math.Abs((Convert.ToInt32(Console.ReadLine())));
+// if (numberI > 0)
+// {
+//     int numberB = numberI * (-1);
 
-    while (count < numberI + numberI + 1) 
-    
-    {
-        
-        Console.Write(numberB + ", ");
-        numberB = numberB + 1;
-        count = count + 1;
-    }
+//     while (count < numberI + numberI + 1)
 
-}
-else
-{
-    int numberB = numberI;
-    Console.Write(numberB + ", ");
-}
+//     {
 
+//         Console.Write(numberB + ", ");
+//         numberB = numberB + 1;
+//         count = count + 1;
+//     }
 
+// }
+// else
+// {
+//     int numberB = numberI;
+//     Console.Write(numberB + ", ");
+// }
 
 
 
 
-// 5 Напишите программу, которая принимает на вход трёхзначное число 
+
+
+// 7 Напишите программу, которая принимает на вход трёхзначное число 
 //и на выходе показывает последнюю цифру этого числа.
 
 // Console.Write("Введите трехзначное число: ");

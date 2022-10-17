@@ -67,20 +67,16 @@
 
 // 4
 
-// Console.WriteLine("Введите два числа для проверки, является ли один квадратом второго");
-// Console.Write("Введите первое число: ");
-// int numberA = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите второе число: ");
-// int numberB = Convert.ToInt32(Console.ReadLine());
-// if (numberA == numberB * numberB) Console.WriteLine("число " + numberA + " квадрат числа " + numberB);
+Console.WriteLine("Введите два числа для проверки, является ли один квадратом второго");
+Console.Write("Введите первое число: ");
+int numberA = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите второе число: ");
+int numberB = Convert.ToInt32(Console.ReadLine());
 
-// else
-// {
-//     Console.WriteLine("число " + numberA + " не квадрат числа " + numberB);
-// }
+if (numberA == numberB * numberB) Console.WriteLine("число " + numberA + " квадрат числа " + numberB);
 
-// if (numberB == numberA * numberA) Console.WriteLine("число " + numberB + " квадрат числа " + numberA);
-// else
-// {
-//     Console.WriteLine("число " + numberB + " не квадрат числа " + numberA);
-// }
+else if (numberB == numberA * numberA) Console.WriteLine("число " + numberB + " квадрат числа " + numberA);
+else
+{
+    Console.WriteLine("числа  не квадрат одно другого");
+}

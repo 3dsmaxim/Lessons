@@ -207,143 +207,141 @@
 //которая удалит строку и столбец, на пересечении которых расположен
 //наименьший элемент массива.
 
-void FillMatrix(int[,] result)
-{
-    for (int i = 0; i < result.GetLength(0); i++)
-    {
-        for (int j = 0; j < result.GetLength(1); j++)
-        {
-            result[i, j] = new Random().Next(1, 10);
-        }
-    }
-}
+// void FillMatrix(int[,] result)
+// {
+//     for (int i = 0; i < result.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < result.GetLength(1); j++)
+//         {
+//             result[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
 
-void PrintMatrix(int[,] matrix)
-{
-    const int cellWidth = 4;
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            Console.Write($"|{matrix[i, j],cellWidth}");
-        }
-        Console.Write("|");
-        Console.WriteLine();
-    }
-}
+// void PrintMatrix(int[,] matrix)
+// {
+//     const int cellWidth = 4;
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             Console.Write($"|{matrix[i, j],cellWidth}");
+//         }
+//         Console.Write("|");
+//         Console.WriteLine();
+//     }
+// }
 
-void DeleteCrossMatrix(int[,] result)
-{
-    int column = 0;
-    int row = 0;
-    int min = result[0, 0];
-    for (int i = 0; i < result.GetLength(0); i++)
-    {
-        for (int j = 0; j < result.GetLength(1); j++)
-        {
+// void DeleteCrossMatrix(int[,] result)
+// {
+//     int column = 0;
+//     int row = 0;
+//     int min = result[0, 0];
+//     for (int i = 0; i < result.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < result.GetLength(1); j++)
+//         {
 
-            if (result[i, j] < min)
-            {
-                min = result[i, j];
-            }
-        }
-    }
-    // Console.WriteLine();
-    // Console.WriteLine(min); 
-    // Console.WriteLine();
-    int[] arreyColumn = new int[result.GetLength(1)];
-    for (int i = 0; i < result.GetLength(0); i++)
-    {
-        for (int j = 0; j < result.GetLength(1); j++)
-        {
-            if (result[i, j] == min)
-            {
-                arreyColumn[j] = result[i, j];
-            }
-        }
-    }
-    //  Console.WriteLine();
-    // Console.WriteLine(String.Join("-",arreyColumn)); 
-    // Console.WriteLine();
-    int[] arreyRow = new int[result.GetLength(0)];
-    for (int j = 0; j < result.GetLength(1); j++)
-    {
-        for (int i = 0; i < result.GetLength(0); i++)
-        {
-            if (result[i, j] == min)
-            {
-                arreyRow[i] = result[i, j];
-            }
-        }
-    }
-    // Console.WriteLine();
-    // Console.WriteLine(String.Join("-",arreyRow)); 
-    // Console.WriteLine();
+//             if (result[i, j] < min)
+//             {
+//                 min = result[i, j];
+//             }
+//         }
+//     }
+//     // Console.WriteLine();
+//     // Console.WriteLine(min); 
+//     // Console.WriteLine();
+//     int[] arreyColumn = new int[result.GetLength(1)];
+//     for (int i = 0; i < result.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < result.GetLength(1); j++)
+//         {
+//             if (result[i, j] == min)
+//             {
+//                 arreyColumn[j] = result[i, j];
+//             }
+//         }
+//     }
+//     //  Console.WriteLine();
+//     // Console.WriteLine(String.Join("-",arreyColumn)); 
+//     // Console.WriteLine();
+//     int[] arreyRow = new int[result.GetLength(0)];
+//     for (int j = 0; j < result.GetLength(1); j++)
+//     {
+//         for (int i = 0; i < result.GetLength(0); i++)
+//         {
+//             if (result[i, j] == min)
+//             {
+//                 arreyRow[i] = result[i, j];
+//             }
+//         }
+//     }
+//     // Console.WriteLine();
+//     // Console.WriteLine(String.Join("-",arreyRow)); 
+//     // Console.WriteLine();
 
-    for (int i = 0; i < arreyRow.Length; i++)
-    {
-        if (arreyRow[i] == min)
-            row++;
-    }
-    for (int i = 0; i < arreyColumn.Length; i++)
-    {
-        if (arreyColumn[i] == min)
+//     for (int i = 0; i < arreyRow.Length; i++)
+//     {
+//         if (arreyRow[i] == min)
+//             row++;
+//     }
+//     for (int i = 0; i < arreyColumn.Length; i++)
+//     {
+//         if (arreyColumn[i] == min)
             
-            column++;
-    }
-    // Console.WriteLine();
-    // Console.WriteLine(row);
-    // Console.WriteLine(column);
+//             column++;
+//     }
+//     // Console.WriteLine();
+//     // Console.WriteLine(row);
+//     // Console.WriteLine(column);
 
-    // Console.WriteLine();
+//     // Console.WriteLine();
 
-    int[,] matrixMin = new int[result.GetLength(0) - row, result.GetLength(1) - column];
-    column = 0;
-    row = 0;
-    // PrintMatrix(matrixMin);
-    for (int i = 0; i < result.GetLength(0); i++)
-    {
-        if (arreyRow[i] != min)
-        {
-               for (int j = 0; j < result.GetLength(1); j++)
-                {
-                    if (arreyColumn[j] != min)
-                    {
-                       matrixMin[row, column] = result[i, j];
+//     int[,] matrixMin = new int[result.GetLength(0) - row, result.GetLength(1) - column];
+//     column = 0;
+//     row = 0;
+//     // PrintMatrix(matrixMin);
+//     for (int i = 0; i < result.GetLength(0); i++)
+//     {
+//         if (arreyRow[i] != min)
+//         {
+//                for (int j = 0; j < result.GetLength(1); j++)
+//                 {
+//                     if (arreyColumn[j] != min)
+//                     {
+//                        matrixMin[row, column] = result[i, j];
                 
-                       column++;
-                    }
-                }
+//                        column++;
+//                     }
+//                 }
 
-            row++;
-            column = 0;
-        }
+//             row++;
+//             column = 0;
+//         }
     
-     
-        
-    }
-    Console.WriteLine();
-    PrintMatrix(matrixMin);
+//     }
+//     Console.WriteLine();
+//     PrintMatrix(matrixMin);
 
-}
+// }
 
-Console.Write("Введите колличество строк: ");
-int rows = int.Parse(Console.ReadLine());
+// Console.Write("Введите колличество строк: ");
+// int rows = int.Parse(Console.ReadLine());
 
-Console.Write("Введите колличество колонок: ");
-int columns = int.Parse(Console.ReadLine());
+// Console.Write("Введите колличество колонок: ");
+// int columns = int.Parse(Console.ReadLine());
 
-int[,] matrixFyrst = new int[rows, columns];
+// int[,] matrixFyrst = new int[rows, columns];
 
 
 
-FillMatrix(matrixFyrst);
-PrintMatrix(matrixFyrst);
+// FillMatrix(matrixFyrst);
+// PrintMatrix(matrixFyrst);
 
-DeleteCrossMatrix(matrixFyrst);
+// DeleteCrossMatrix(matrixFyrst);
 
 
-Console.WriteLine();
+// Console.WriteLine();
 
 
 
@@ -353,3 +351,60 @@ Console.WriteLine();
 
 //Задача 61: Вывести первые N строк треугольника Паскаля.
 //Сделать вывод в виде равнобедренного треугольника
+Console.Write("Введите N: ");
+int row = int.Parse(Console.ReadLine());
+int[,] triangle = new int[row, row];
+
+const int cellWidth = 2;
+void FillTriagle()
+{
+    for (int i = 0; i < row; i++)
+    {
+        triangle[i, 0] = 1;
+        triangle[i, i] = 1;
+    }
+
+    for (int i = 2; i < row; i++)
+    {
+        for (int j = 1; j < row; j++)
+        {
+            triangle[i, j] = triangle[i - 1, j - 1] + triangle[i - 1, j];
+        }
+    }
+
+}
+
+void PrintMatrix()
+{
+    
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < row; j++)
+        {
+            if (triangle[i, j] != 0) 
+            Console.Write($"{triangle[i, j],cellWidth}");
+        }
+        Console.WriteLine();
+    }
+}
+
+void TriagleM()
+{
+    int col = cellWidth * row;
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < row; j++)
+        {
+            Console.SetCursorPosition(col, i + 1);
+            // if (triangle[i, j] != 0) Console.Write($"{triangle[i, j],cellWidth}");
+            if (triangle[i, j] != 0) Console.Write($"*");
+            col +=  cellWidth *2;
+        }
+        col = cellWidth * row - cellWidth * (i +1);
+        Console.WriteLine();
+    }
+}
+
+
+FillTriagle();
+TriagleM();
